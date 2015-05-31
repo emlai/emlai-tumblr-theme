@@ -456,115 +456,114 @@
 				{block:Pages}<li><a href="{URL}">{Label}</a></li>{block:Pages}
 			{/block:HasPages}
 		</div>
+	</div>
+	
+	<!-- CONTENT -->
+	<div class="autopagerize_page_element">
+		{block:Posts}
 		
-		<!-- CONTENT -->
-		
-		<div class="autopagerize_page_element">
-			{block:Posts}
+		<div class="posts">
+			{block:Photo}
+				<div class="media">{LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" />{LinkCloseTag}</div>
+				{block:Caption}<div class="photoCaption">{Caption}</div>{/block:Caption}
+			{/block:Photo}
 			
-			<div class="posts">
-				{block:Photo}
-					<div class="media">{LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" />{LinkCloseTag}</div>
-					{block:Caption}<div class="photoCaption">{Caption}</div>{/block:Caption}
-				{/block:Photo}
-				
-				{block:Photoset}
-					<div class="media">{Photoset}</div>
-					{block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-				{/block:Photoset}
-				
-				{block:Audio}
-					<div class="audioleft">
-							<div class="audioc">
-								<div class="audio">{AudioPlayerBlack}</div>
-							</div>
-						</div>
-					<div class="audioright">
-						<div class="audioCaption">{block:Artist}<b>{Artist}</b>{/block:Artist}
-							<p>&mdash;{block:TrackName}{TrackName}{/block:TrackName}</p>
+			{block:Photoset}
+				<div class="media">{Photoset}</div>
+				{block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+			{/block:Photoset}
+			
+			{block:Audio}
+				<div class="audioleft">
+						<div class="audioc">
+							<div class="audio">{AudioPlayerBlack}</div>
 						</div>
 					</div>
-					<div class="audioClear"></div>
-					<div class="audioContainer">
-					{block:Caption}{Caption}{/block:Caption}
+				<div class="audioright">
+					<div class="audioCaption">{block:Artist}<b>{Artist}</b>{/block:Artist}
+						<p>&mdash;{block:TrackName}{TrackName}{/block:TrackName}</p>
+					</div>
 				</div>
-				{/block:Audio}
-				
-				{block:Video}
-					<div class="media">{Video-700}</div>
-					{block:Caption}<div>{Caption}</div>{/block:Caption}
-				{/block:Video}
-				
-				{block:Answer}
-					<h3>{Asker} asked: {Question}</h3>
-					{Answer}
-				{/block:Answer}
+				<div class="audioClear"></div>
+				<div class="audioContainer">
+				{block:Caption}{Caption}{/block:Caption}
 			</div>
+			{/block:Audio}
 			
-			<div class="header-posts">
-				{block:Text}
-					{block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
-					{Body}
-				{/block:Text}
-				
-				{block:Link}
-					<h2><a href="{URL}" {Target}>{Name} &rarr;</a></h2>
-					{block:Description}
-					<div>{Description}</div>
-					{/block:Description}
-				{/block:Link}
-				
-				{block:Quote}
-					<div class="quote">{Quote}</div>
-					{block:Source}<div id="quoteSource"><p>&mdash; {Source}</p></div>{/block:Source}
-				{/block:Quote}
-				
-				{block:Chat}
-					{block:Title}<h2>{Title}</h2>{/block:Title}
-					<ul class="chat">
-						{block:Lines}
-						<li>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</li>
-						{/block:Lines}
-					</ul>
-				{/block:Chat}
-			</div>
+			{block:Video}
+				<div class="media">{Video-700}</div>
+				{block:Caption}<div>{Caption}</div>{/block:Caption}
+			{/block:Video}
 			
-			<!--
-			{block:HasTags}
-				<div class="tags">
-					{block:Tags}
-						<li>
-							<a href="{TagURL}">#{Tag}</a>
-						</li>
-					{/block:Tags}
-				</div>
-			{/block:HasTags}
-			-->
-			
-			<div class="meta">
-				<div class="datenotes">
-					{block:IfShowDate}
-					{block:Date}
-						<span class="date">
-							<a href="{Permalink}">{DayOfMOnth}{DayOfMonthSuffix} {ShortMonth} {Year}</a>
-						</span>
-					{/block:Date}
-					{/block:IfShowDate}
-					
-					{block:IfShowNoteCount}
-					{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
-					{/block:IfShowNoteCount}
-				</div>
-				<div class="like-button">{LikeButton color="grey" size="16"}</div>
-				<div class="reblog-button">{ReblogButton color="grey" size="16"}</div>
-			</div>
-			
-			{block:PostNotes}
-				{PostNotes}
-			{/block:PostNotes}
-			
-			{/block:Posts}
+			{block:Answer}
+				<h3>{Asker} asked: {Question}</h3>
+				{Answer}
+			{/block:Answer}
 		</div>
+		
+		<div class="header-posts">
+			{block:Text}
+				{block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+				{Body}
+			{/block:Text}
+			
+			{block:Link}
+				<h2><a href="{URL}" {Target}>{Name} &rarr;</a></h2>
+				{block:Description}
+				<div>{Description}</div>
+				{/block:Description}
+			{/block:Link}
+			
+			{block:Quote}
+				<div class="quote">{Quote}</div>
+				{block:Source}<div id="quoteSource"><p>&mdash; {Source}</p></div>{/block:Source}
+			{/block:Quote}
+			
+			{block:Chat}
+				{block:Title}<h2>{Title}</h2>{/block:Title}
+				<ul class="chat">
+					{block:Lines}
+					<li>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</li>
+					{/block:Lines}
+				</ul>
+			{/block:Chat}
+		</div>
+		
+		<!--
+		{block:HasTags}
+			<div class="tags">
+				{block:Tags}
+					<li>
+						<a href="{TagURL}">#{Tag}</a>
+					</li>
+				{/block:Tags}
+			</div>
+		{/block:HasTags}
+		-->
+		
+		<div class="meta">
+			<div class="datenotes">
+				{block:IfShowDate}
+				{block:Date}
+					<span class="date">
+						<a href="{Permalink}">{DayOfMOnth}{DayOfMonthSuffix} {ShortMonth} {Year}</a>
+					</span>
+				{/block:Date}
+				{/block:IfShowDate}
+				
+				{block:IfShowNoteCount}
+				{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}
+				{/block:IfShowNoteCount}
+			</div>
+			<div class="like-button">{LikeButton color="grey" size="16"}</div>
+			<div class="reblog-button">{ReblogButton color="grey" size="16"}</div>
+		</div>
+		
+		{block:PostNotes}
+			{PostNotes}
+		{/block:PostNotes}
+		
+		{/block:Posts}
 	</div>
 	
 	<!-- PAGINATION -->
