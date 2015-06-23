@@ -268,6 +268,7 @@
 	}
 	
 	.media {
+	    text-align: center;
 		margin-bottom: 8px;
 	}
 	
@@ -463,10 +464,10 @@
 			
 			{block:Audio}
 				<div class="audioleft">
-						<div class="audioc">
-							<div class="audio">{AudioPlayerBlack}</div>
-						</div>
+					<div class="audioc">
+						<div class="audio">{AudioPlayerBlack}</div>
 					</div>
+				</div>
 				<div class="audioright">
 					<div class="audioCaption">{block:Artist}<b>{Artist}</b>{/block:Artist}
 						<p>&mdash;{block:TrackName}{TrackName}{/block:TrackName}</p>
@@ -474,8 +475,8 @@
 				</div>
 				<div class="audioClear"></div>
 				<div class="audioContainer">
-				{block:Caption}{Caption}{/block:Caption}
-			</div>
+				    {block:Caption}{Caption}{/block:Caption}
+			    </div>
 			{/block:Audio}
 			
 			{block:Video}
