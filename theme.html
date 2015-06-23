@@ -273,7 +273,8 @@
 	}
 	
 	.posts img {
-		width: 100%;
+		max-width: 100%;
+		max-height: 500px;
 	}
 	
 	.pagination {
@@ -458,7 +459,7 @@
 			{/block:Photo}
 			
 			{block:Photoset}
-				<div class="media">{Photoset}</div>
+				<div class="media">{Photoset-500}</div>
 				{block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
 			{/block:Photoset}
 			
